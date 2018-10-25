@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--使用mybatis-spring依赖以后就不需要配置这个只需要配置spring-mybatis文件-->
+<configuration>
+    <!-- 引入外部资源文件 -->
+    <properties resource="myBatisGenerator/jdbc_config.properties"></properties>
+    <!-- 设置驼峰匹配 -->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 设置包扫描(别名) -->
+    <!--<typeAliases>-->
+        <!--<package name="org.mybatis.entity"/>-->
+        <!--<package name="org.mybatis.mapper"/>-->
+    <!--</typeAliases>-->
+    <!-- 配置环境：可以配置多个环境，default：配置某一个环境的唯一标识，表示默认使用哪个环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!-- 配置连接信息 -->
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 配置映射文件：用来配置sql语句和结果集类型等 -->
+    <mappers>
+        <!-- 使用这个方案，可以单独指定Mapper的位置 -->
+        <!-- <mapper resource="mybatis/mappings/UserModelMapper.xml"/>
+        <mapper resource="mybatis/mappings/UserModelTwoMapper.xml"/> -->
+
+        <!-- 使用下面两个个方法，Mapper.xml 文件位置必须在和其内部 <mapper namespace="">的类在一起，当然，使用注解模式的话，Mapper.xml文件就没有必要存在了 -->
+
+        <!-- 直接指定一个包去扫描-内保包含多个Mapper配置- -->
+        <!-- <package name="com.bestcxx.stu.springmvc.mapper"/> -->
+
+        <!-- class 级别的指定 -->
+
+        <!--<mapper class="org.mybatis.mapper.UserMapper."/>-->
+        <mapper resource="mybatis/mapping/UserMapper.xml"/>
+        <!--<mapper resource="UserMapper.xml"/>-->
+    </mappers>
+</configuration>
