@@ -4,7 +4,7 @@
 - mybatis框架
 - spring mvc框架
 - Gradle 管理
-- [访问博客](https://mp.csdn.net/mdeditor/83375680#)
+- [访问博客](https://blog.csdn.net/smallbabylong/article/details/83375680)
 ## 创建Gradle项目
 1.创建gradle项目：File->New->Project
  ![在这里插入图片描述](https://img-blog.csdn.net/20181025093211590?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NtYWxsYmFieWxvbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)![在这里插入图片描述](https://img-blog.csdn.net/20181025093120728?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NtYWxsYmFieWxvbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
